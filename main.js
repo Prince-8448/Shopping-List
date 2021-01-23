@@ -14,16 +14,32 @@ unordered.addEventListener('click', function (event){
 	}
 });
 
+//Adding to string
+let saved = ["Butter","Milk","Peas","Sugar","Laundry Soap"]
+function myFunction() {
+   let inputValue = document.getElementById("new-item-text").value; 
+   fruits.push(inputValue);
+}
+
+
 //Adding a new item
 function addto_List(item) {
 	item = item.trim();
 	if(item == ''){
 		return;
+    }else if(item != ''){
+    for(let i=0; i<=saved.length; i++){
+    item == saved[i];	
+	}
+	alert("same");
+	return;
 	}
 	const li = document.createElement('li');
 	li.innerHTML = `<li class='todo-item'> ${item} <span class='remove'></span> </li>`;
     unordered.appendChild(li);
 };
+
+
 
 //Adding a new item by Enter Key
 let i = document.querySelector('input');
@@ -42,5 +58,6 @@ let addInput = document.querySelector('a');
 addInput.addEventListener('click', function (event){
 	console.log('a');
 	addto_List(i.value);
+document.getElementById('new-item-text').value="";
+	
 });
-
