@@ -16,9 +16,14 @@ unordered.addEventListener('click', function (event){
 
 //Adding to string
 let saved = ["Butter","Milk","Peas","Sugar","Laundry Soap"]
+let lowerCase = saved.map( element => element.toLowerCase ); 
 function myFunction() {
    let inputValue = document.getElementById("new-item-text").value; 
-   fruits.push(inputValue);
+   if(saved.incudes(inputValue)) {
+	   alert(Item already has been added to your list);
+   }esle{
+	fruits.push(inputValue);
+   }
 }
 
 
